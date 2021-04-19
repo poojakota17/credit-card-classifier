@@ -15,7 +15,8 @@ public class ProjectApplication {
 		//String csvFile = "C:/Users/Checkout/Downloads/data.csv";
 		
 		
-		String filename= "data.csv";
+		//String filename= "jsondata.json";
+		String filename="xmldata.xml";
 		Client client=new Client();
 		client.read(filename);
 		
