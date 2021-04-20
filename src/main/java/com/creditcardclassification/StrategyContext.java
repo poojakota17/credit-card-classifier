@@ -9,7 +9,7 @@ public class StrategyContext {
         this.strategy=Strategy;
     }
 
-    public void executeStrategy(String filename){
-        strategy.readfile(filename);
+    public void executeStrategy(String inputfilename, String outputfilename){
+        strategy.readfile(inputfilename,outputfilename);
     }
 }
