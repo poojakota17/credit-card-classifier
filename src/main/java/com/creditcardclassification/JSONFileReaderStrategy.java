@@ -37,6 +37,7 @@ public class JSONFileReaderStrategy implements FileFormatStrategy {
      
      try {
         String jsonString = gson.toJson(cardList);
+        outputfilename=outputfilename.concat(".json");
         FileWriter file = new FileWriter(outputfilename);
         file.write(jsonString);
         file.close();

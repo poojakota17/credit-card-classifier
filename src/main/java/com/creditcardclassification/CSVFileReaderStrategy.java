@@ -34,6 +34,7 @@ public class CSVFileReaderStrategy implements FileFormatStrategy{
                ioe.printStackTrace();
             }
            // C:/Users/Checkout/javaproject/project/
+           outputfilename=outputfilename.concat(".csv");
             File outputfile = new File(outputfilename);
             try {
                

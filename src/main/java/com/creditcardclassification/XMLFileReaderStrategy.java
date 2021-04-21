@@ -51,6 +51,7 @@ public class XMLFileReaderStrategy implements FileFormatStrategy {
     //     e.printStackTrace();
     //  }
     //  try {
+        outputfilename=outputfilename.concat(".xml");
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource domSource = new DOMSource(document);
