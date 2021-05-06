@@ -4,25 +4,27 @@ package com.creditcardclassification;
 
 public class Client {
    
-   StrategyContext strategy=new StrategyContext();
+    StrategyContext strategy=new StrategyContext();
+    public FileFormatStrategy fileFormatStrategy;
    public void read(String inputfilename,String outputfilename){
       if(inputfilename.substring(inputfilename.lastIndexOf(".") + 1).equalsIgnoreCase("csv"))
       {
-        strategy.setStrategy(new CSVFileReaderStrategy());
+       fileFormatStrategy= strategy.setStrategy(new CSVFileReaderStrategy());
         strategy.executeStrategy(inputfilename,outputfilename);
       }
       else if(inputfilename.substring(inputfilename.lastIndexOf(".") + 1).equalsIgnoreCase("json")){
-         strategy.setStrategy(new JSONFileReaderStrategy());
+        fileFormatStrategy= strategy.setStrategy(new JSONFileReaderStrategy());
         strategy.executeStrategy(inputfilename,outputfilename);
            
         
       }
       else if(inputfilename.substring(inputfilename.lastIndexOf(".") + 1).equalsIgnoreCase("xml")){
-         strategy.setStrategy(new XMLFileReaderStrategy());
+        fileFormatStrategy= strategy.setStrategy(new XMLFileReaderStrategy());
         strategy.executeStrategy(inputfilename,outputfilename);
       }
       else {
-         System.out.println("File format not supported");
+          fileFormatStrategy=null;
+         System.out.println("File format not supported, please provide a file with csv,json or xml extensions");
       }
    }
   

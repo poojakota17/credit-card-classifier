@@ -2,6 +2,7 @@ package com.creditcardclassification;
 
 
 public interface FileFormatStrategy {
+
     Handler errorcardHandler= new ErrorCCHandler(null);
     Handler discovercardHandler=new DiscoverCCCheckHandler(errorcardHandler);
     Handler amexcardHandler= new AmexCCCheckHandler(discovercardHandler);

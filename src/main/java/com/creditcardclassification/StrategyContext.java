@@ -5,8 +5,10 @@ package com.creditcardclassification;
 public class StrategyContext {
     
     FileFormatStrategy strategy;
-    public void setStrategy(FileFormatStrategy Strategy){
+    public FileFormatStrategy setStrategy(FileFormatStrategy Strategy){
+
         this.strategy=Strategy;
+        return strategy;
     }
 
     public void executeStrategy(String inputfilename, String outputfilename){

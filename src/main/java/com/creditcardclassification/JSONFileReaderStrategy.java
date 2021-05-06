@@ -9,10 +9,11 @@ import java.util.List;
 
 
 public class JSONFileReaderStrategy implements FileFormatStrategy {
+    public String jsonString;
     public void readfile(String inputfilename, String outputfilename){
         JSONParser parser = new JSONParser();
         //JSONObject jsonwriteObject = new JSONObject();
-        
+
         String result="";
         Gson gson = new Gson();
         List cardList = new ArrayList<>();
@@ -36,7 +37,8 @@ public class JSONFileReaderStrategy implements FileFormatStrategy {
      }
      
      try {
-        String jsonString = gson.toJson(cardList);
+         jsonString = gson.toJson(cardList);
+        System.out.println(jsonString);
         outputfilename=outputfilename.concat(".json");
         FileWriter file = new FileWriter(outputfilename);
         file.write(jsonString);

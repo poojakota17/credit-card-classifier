@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CSVFileReaderStrategy implements FileFormatStrategy{
     public static final String delimiter = ",";
-    List<String[]> data = new ArrayList<String[]>();
+    public List<String[]> data = new ArrayList<String[]>();
     
     String result="";
     public void readfile(String inputfilename, String outputfilename){
@@ -36,6 +36,9 @@ public class CSVFileReaderStrategy implements FileFormatStrategy{
            // C:/Users/Checkout/javaproject/project/
            outputfilename=outputfilename.concat(".csv");
             File outputfile = new File(outputfilename);
+        for (String[] arr : data) {
+            System.out.println(Arrays.toString(arr));
+        }
             try {
                
                 FileWriter outputfile1 = new FileWriter(outputfile);
