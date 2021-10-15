@@ -4,7 +4,7 @@
 
 Steps:
 1. Clone the project and cd to the root folder.
-`cd individual-project-poojakota17`
+`cd credit-card-classifier`
    
 2. In linux, to build the project,run the following command
 `./gradlew build`
